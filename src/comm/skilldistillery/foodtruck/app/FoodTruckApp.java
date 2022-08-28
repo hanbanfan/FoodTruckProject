@@ -19,48 +19,6 @@ public class FoodTruckApp {
 		trucks.createTrucks();
 	}
 
-	public void createTrucks() {
-		for (int truckID = 0; truckID < truckFleet.length; truckID++) {
-			System.out.println(
-					"Please Enter a Food Truck Name (Note: type \"quit\" here to stop entry or enter less than 5): ");
-			String name = kb.nextLine();
-
-			if (name.equalsIgnoreCase("quit")) {
-				break;
-			}
-
-			System.out.println("Please Enter this Food Truck's type of Cuisine: ");
-			String foodType = kb.nextLine();
-
-			System.out.println("Please enter this Food Truck's rating (1-5): ");
-			int rating = kb.nextInt();
-			kb.nextLine();
-			// absorb the extra line that populated
-			// when the user returns their response 
-			//to  first prompt
-
-		FoodTruck truck = new FoodTruck(name,foodType,rating);
-		truckFleet[truckID] = truck;
-
-		}
-		while (true) {
-			displayMenu();
-			System.out.println();
-		}
-
-	}
-
-	public void displayTrucks() {
-		// display the array of food trucks that was created
-		// in for loop createTrucks() method
-		for (FoodTruck foodTruck : truckFleet) {
-			if (foodTruck != (null)) {
-				System.out.println(foodTruck.toString());
-			}
-		}
-
-	}
-
 	public void displayMenu() {
 		System.out.println("1. List all food trucks in the area");
 		System.out.println("2. See the average rating of food trucks");
@@ -83,6 +41,47 @@ public class FoodTruckApp {
 			System.out.println("Exiting the Program, Goodbye.");
 			System.exit(0);
 
+		}
+	}
+
+	public void createTrucks() {
+		for (int truckID = 0; truckID < truckFleet.length; truckID++) {
+			System.out.println(
+					"Please Enter a Food Truck Name (Note: type \"quit\" here to stop entry or enter less than 5): ");
+			String name = kb.nextLine();
+
+			if (name.equalsIgnoreCase("quit")) {
+				break;
+			}
+
+			System.out.println("Please Enter this Food Truck's type of Cuisine: ");
+			String foodType = kb.nextLine();
+
+			System.out.println("Please enter this Food Truck's rating (1-5): ");
+			int rating = kb.nextInt();
+			kb.nextLine();
+			// absorb the extra line that populated
+			// when the user returns their response
+			// to first prompt
+
+			FoodTruck truck = new FoodTruck(name, foodType, rating);
+			truckFleet[truckID] = truck;
+
+		}
+		while (true) {
+			displayMenu();
+			System.out.println();
+		}
+
+	}
+
+	public void displayTrucks() {
+		// display the array of food trucks that was created
+		// in for loop createTrucks() method
+		for (FoodTruck foodTruck : truckFleet) {
+			if (foodTruck != (null)) {
+				System.out.println(foodTruck.toString());
+			}
 		}
 
 	}
