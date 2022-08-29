@@ -12,6 +12,6 @@
 
 
 ##Technologies used
--Eclipse -Java
--Terminal Commands
--GitHub
+- Eclipse - Java
+- Terminal Commands
+- GitHub
